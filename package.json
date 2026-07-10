@@ -1,0 +1,15 @@
+{
+  "name": "work",
+  "version": "1.0.0",
+  "description": "Marketing site for **Kaapi**, a fictional specialty-coffee roaster: single-origin beans from the hills of Chikmagalur (South India), roasted in small batches and shipped fresh.",
+  "main": "playwright.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.61.1"
+  }
+}
