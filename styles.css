@@ -1,0 +1,55 @@
+/* Kaapi — design system. Warm, premium, editorial specialty-coffee brand.
+   One source of truth for tokens; build UI to these. See .octo/DESIGN_SYSTEM.md. */
+:root{
+  /* color */
+  --cream:#f7f1e6;        /* page background */
+  --paper:#fffdf8;        /* cards / surfaces */
+  --espresso:#2b1e15;     /* primary text / dark */
+  --coffee:#6b4a34;       /* secondary brown */
+  --crema:#e7d6bb;        /* soft tan lines/fills */
+  --gold:#c1873b;         /* primary accent */
+  --terracotta:#b5502f;   /* secondary accent */
+  --muted:#8a7868;        /* muted text */
+  --line:#e8ddc9;         /* borders */
+  --green:#4b7f52;        /* success */
+  --shadow:0 1px 2px rgba(43,30,21,.05), 0 10px 30px -12px rgba(43,30,21,.18);
+  /* type */
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;   /* display / headings / brand */
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; /* body */
+  /* shape + space (8px scale) */
+  --r-sm:8px; --r:12px; --r-lg:18px; --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--espresso);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(38px,6vw,68px)}
+h2{font-size:clamp(26px,3.4vw,40px)}
+h3{font-size:20px}
+p{margin:0 0 1em;color:#4a3b2f}
+a{color:var(--coffee);text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--sans);border-radius:999px;padding:12px 22px;cursor:pointer;border:1.5px solid transparent;transition:.15s}
+.btn-primary{background:var(--espresso);color:var(--cream)}
+.btn-primary:hover{background:#3d2a1d;transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--espresso);color:var(--espresso)}
+.btn-ghost:hover{background:var(--espresso);color:var(--cream)}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,241,230,.86);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(193,135,59,.18)}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}
+.nav-links a{color:var(--espresso);opacity:.8}.nav-links a:hover{opacity:1;color:var(--gold)}
+/* card / section */
+.section{padding:80px 0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px}
+.pill{display:inline-block;font-size:12px;font-weight:700;color:var(--coffee);background:var(--crema);border-radius:999px;padding:4px 12px}
+/* utility */
+.center{text-align:center}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.g3{grid-template-columns:1fr}.nav-links{display:none}}

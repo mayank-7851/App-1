@@ -1,29 +1,24 @@
-# Login Flow
+# Kaapi — small-batch specialty coffee
 
-A minimal Flask-based authentication service with email/password signup and login.
+Marketing site for **Kaapi**, a fictional specialty-coffee roaster: single-origin beans from the
+hills of Chikmagalur (South India), roasted in small batches and shipped fresh.
 
-## Endpoints
+## What this is
+A **static website** (plain HTML + CSS, no build step) deployed on **GitHub Pages** — it serves
+`index.html` from the repo root and redeploys automatically on every push to `main`.
 
-| Method | Path        | Description                        |
-|--------|-------------|------------------------------------|
-| POST   | `/signup`   | Create a new user account          |
-| POST   | `/login`    | Authenticate and receive a JWT     |
-| GET    | `/me`       | Get current user info (Bearer auth) |
+- **Live site:** https://mayank-7851.github.io/App-1/
+- **Design system:** `styles.css` (tokens) + [`.octo/DESIGN_SYSTEM.md`](.octo/DESIGN_SYSTEM.md) — warm
+  editorial palette (cream / espresso / gold), Fraunces (serif display) + Inter (body). **Build all UI
+  to these tokens** so the site stays consistent.
 
-## Quick start
+## Structure
+- `index.html` — the landing page (nav + hero scaffolded; other sections added via tickets).
+- `styles.css` — the design system + reusable classes (`.nav`, `.btn`, `.card`, `.section`, `.grid` …).
+- `.octo/DESIGN_SYSTEM.md` — the durable design-system reference.
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-## Running tests
-
-```bash
-# With pytest (preferred)
-pip install pytest
-python -m pytest test_auth.py -v
-
-# Or with the built-in runner
-python test_auth.py
-```
+## Conventions for new UI
+- Reuse the CSS tokens and utility classes in `styles.css`; add new component styles there in the same style.
+- Keep it a single static page unless a ticket says otherwise; use relative asset paths (project Pages
+  serves under `/App-1/`).
+- Icons: inline SVG, thin stroke — never emoji or raster images.
