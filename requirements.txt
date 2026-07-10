@@ -1,3 +1,0 @@
-flask>=3.0
-pyjwt>=2.8
-werkzeug>=3.0
