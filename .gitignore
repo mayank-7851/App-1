@@ -7,3 +7,5 @@ users.db
 dist/
 build/
 .venv/
+node_modules/
+test-results/
