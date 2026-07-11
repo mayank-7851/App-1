@@ -33,11 +33,10 @@ test.describe('Brewing Guide page', () => {
     }
   });
 
-  test('contact section is reachable via nav anchor', async ({ page }) => {
-    await page.click('.nav-links a[href="#contact"]');
-    // The #contact element should be in view
-    await expect(page.locator('#contact')).toBeInViewport();
-    await expect(page.locator('#contact')).toContainText('Say hello');
+  test('contact page is reachable via nav link', async ({ page }) => {
+    await page.click('.nav-links a[href="contact.html"]');
+    await expect(page).toHaveURL(/contact\.html/);
+    await expect(page.locator('h1')).toContainText('Contact');
   });
 
   test('no console errors or broken resources', async ({ page }) => {
