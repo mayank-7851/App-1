@@ -85,3 +85,19 @@ a{color:var(--coffee);text-decoration:none}
     .g2{grid-template-columns:1fr;gap:32px}
     .nav-links{display:none}
 }
+
+/* About section (index.html) */
+.about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about .inner{max-width:720px;margin:0 auto}
+.about .eyebrow{text-align:center;margin-bottom:14px}
+.about h2{text-align:center;margin-bottom:36px;line-height:1.2}
+.about p{font-size:16px;line-height:1.75;color:var(--coffee);margin-bottom:20px}
+.about p:last-child{margin-bottom:0}
+.about .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:36px auto;color:var(--gold)}
+.about .divider svg{flex-shrink:0}
+.about .divider .line-dot{width:40px;height:1px;background:var(--line);border-radius:1px}
+@media(max-width:600px){
+  .about h2{margin-bottom:28px}
+  .about p{font-size:15px;line-height:1.7;margin-bottom:16px}
+  .about .divider{margin:28px auto}
+}
