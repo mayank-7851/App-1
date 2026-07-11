@@ -67,14 +67,15 @@ test.describe('Contact page', () => {
 
   test('nav links are present and count is correct', async ({ page }) => {
     const navLinks = page.locator('.nav-links a');
-    await expect(navLinks).toHaveCount(6);
-    // Verify all six links
+    await expect(navLinks).toHaveCount(7);
+    // Verify all seven links
     await expect(navLinks.nth(0)).toHaveAttribute('href', 'beans.html');
     await expect(navLinks.nth(1)).toHaveAttribute('href', 'brewing.html');
     await expect(navLinks.nth(2)).toHaveAttribute('href', 'story.html');
     await expect(navLinks.nth(3)).toHaveAttribute('href', 'contact.html');
     await expect(navLinks.nth(4)).toHaveAttribute('href', 'locations.html');
-    await expect(navLinks.nth(5)).toHaveAttribute('href', '#contact');
+    await expect(navLinks.nth(5)).toHaveAttribute('href', 'careers.html');
+    await expect(navLinks.nth(6)).toHaveAttribute('href', '#contact');
   });
 
   test('no console errors', async ({ page }) => {
