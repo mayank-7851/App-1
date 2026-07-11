@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locations — Kaapi</title>
+<meta name="description" content="Visit Kaapi cafes — three locations across Bangalore, Chennai, and Mumbai, each with its own rhythm.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Page-specific overrides — these extend styles.css for the locations layout */
+  .page-hero { padding: 56px 0 20px; text-align: center; }
+  .page-hero .eyebrow { margin-bottom: 8px; }
+  .page-hero h1 { margin-top: 4px; }
+  .subtitle { color: var(--muted); font-size: 16px; margin: 10px auto 0; max-width: 460px; }
+
+  .loc-card { padding: 28px 26px 24px !important; gap: 14px !important; transition: box-shadow .25s, border-color .25s, transform .2s; }
+  .loc-card:hover { box-shadow: 0 6px 28px rgba(43,30,21,.1), 0 2px 6px rgba(43,30,21,.05) !important; border-color: #d9c9a8 !important; transform: translateY(-2px); }
+
+  .address { font-size: 15px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+  .hours-block { background: var(--crema); border-radius: var(--r-sm); padding: 12px 14px; font-size: 13.5px; color: var(--coffee); line-height: 1.55; letter-spacing: .01em; }
+  .hours-block .day-range { font-weight: 600; color: var(--espresso); display: block; margin-bottom: 3px; font-size: 13px; letter-spacing: .02em; text-transform: uppercase; }
+  .hours-block .time { display: block; }
+  .hours-block .closed-note { color: var(--terracotta); font-weight: 500; }
+
+  .card-link { font-family: var(--sans); font-size: 13.5px; font-weight: 600; color: var(--coffee); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color .2s; letter-spacing: .01em; margin-top: auto; padding-top: 4px; }
+  .card-link:hover { color: var(--gold); }
+  .card-link svg { transition: transform .2s; }
+  .card-link:hover svg { transform: translateX(2px); }
+
+  .footer-note { text-align: center; padding: 40px 24px 56px; color: var(--muted); font-size: 14px; letter-spacing: .02em; }
+  .footer-note span { color: var(--gold); }
+</style>
+</head><body>
+
+<header class="nav"><div class="wrap row">
+  <a class="brand" href="/"><span class="dot"></span>Kaapi</a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="beans.html">Beans</a>
+    <a href="brewing.html">Brewing</a>
+    <a href="story.html">Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+  <section class="page-hero wrap">
+    <div class="eyebrow">Find Us</div>
+    <h1>Our Locations</h1>
+    <p class="subtitle">Three cafes, each with its own rhythm. Pull up a chair — we've been expecting you.</p>
+  </section>
+
+  <section class="section" style="padding-top:24px">
+    <div class="wrap">
+      <div class="grid g3">
+
+        <!-- Location 1: Bangalore -->
+        <article class="card loc-card" aria-labelledby="loc1-heading">
+          <svg class="card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-3.2-4.8-7-8.8-7-12.5a7 7 0 1 1 14 0C19 12.2 15.2 16.2 12 21z"/>
+            <circle cx="12" cy="8.5" r="2.6"/>
+          </svg>
+          <h3 id="loc1-heading">Kaapi Brew Bar</h3>
+          <p class="address">42, 80 Feet Road,<br>Koramangala 5th Block,<br>Bangalore 560095</p>
+          <div class="hours-block">
+            <span class="day-range">Mon – Fri</span>
+            <span class="time">7:00 AM – 10:00 PM</span>
+            <span class="day-range" style="margin-top:6px">Sat – Sun</span>
+            <span class="time">8:00 AM – 11:00 PM</span>
+          </div>
+          <span class="card-link">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </article>
+
+        <!-- Location 2: Chennai -->
+        <article class="card loc-card" aria-labelledby="loc2-heading">
+          <svg class="card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-3.2-4.8-7-8.8-7-12.5a7 7 0 1 1 14 0C19 12.2 15.2 16.2 12 21z"/>
+            <circle cx="12" cy="8.5" r="2.6"/>
+          </svg>
+          <h3 id="loc2-heading">Kaapi House</h3>
+          <p class="address">15, North Mada Street,<br>Mylapore,<br>Chennai 600004</p>
+          <div class="hours-block">
+            <span class="day-range">Mon – Sun</span>
+            <span class="time">6:30 AM – 9:30 PM</span>
+          </div>
+          <span class="card-link">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </article>
+
+        <!-- Location 3: Mumbai -->
+        <article class="card loc-card" aria-labelledby="loc3-heading">
+          <svg class="card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-3.2-4.8-7-8.8-7-12.5a7 7 0 1 1 14 0C19 12.2 15.2 16.2 12 21z"/>
+            <circle cx="12" cy="8.5" r="2.6"/>
+          </svg>
+          <h3 id="loc3-heading">Kaapi Roastery</h3>
+          <p class="address">8, Chapel Road,<br>Bandra West,<br>Mumbai 400050</p>
+          <div class="hours-block">
+            <span class="day-range">Tue – Sun</span>
+            <span class="time">8:00 AM – 10:00 PM</span>
+            <span class="day-range" style="margin-top:6px">Monday</span>
+            <span class="time closed-note">Closed</span>
+          </div>
+          <span class="card-link">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <p class="footer-note">Fresh filter coffee, served slow. <span>✦</span></p>
+</main>
+
+</body></html>
