@@ -1,0 +1,47 @@
+/* Reviews page — testimonial card styles. See .octo/DESIGN_SYSTEM.md for tokens. */
+
+/* Star row */
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+/* Quote block */
+.review-quote {
+  margin: 0;
+  flex: 1;
+}
+
+.review-quote p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4a3b2f;
+  margin: 0;
+}
+
+/* Author footer */
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--espresso);
+}
+
+.review-role {
+  font-size: 13px;
+}
+
+/* Ensure review cards fill height evenly in the grid */
+.review-card {
+  justify-content: flex-start;
+}
