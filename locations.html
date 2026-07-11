@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Locations — Kaapi</title>
-<meta name="description" content="Visit Kaapi cafes — three locations across Bangalore, Chennai, and Mumbai, each with its own rhythm.">
+<meta name="description" content="Visit Kaapi cafes — five locations across Bangalore, Chennai, Mumbai, Kolkata, and Delhi, each with its own rhythm.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -30,6 +30,11 @@
 
   .footer-note { text-align: center; padding: 40px 24px 56px; color: var(--muted); font-size: 14px; letter-spacing: .02em; }
   .footer-note span { color: var(--gold); }
+
+  /* g4 responsive: 2-col tablet intermediate (821–900px) before the global 1-col mobile rule in styles.css */
+  @media (min-width: 821px) and (max-width: 900px) {
+    .g4 { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head><body>
 
@@ -48,12 +53,12 @@
   <section class="page-hero wrap">
     <div class="eyebrow">Find Us</div>
     <h1>Our Locations</h1>
-    <p class="subtitle">Three cafes, each with its own rhythm. Pull up a chair — we've been expecting you.</p>
+    <p class="subtitle">Five cafes, each with its own rhythm. Pull up a chair — we've been expecting you.</p>
   </section>
 
   <section class="section" style="padding-top:24px">
     <div class="wrap">
-      <div class="grid g3">
+      <div class="grid g4">
 
         <!-- Location 1: Bangalore -->
         <article class="card loc-card" aria-labelledby="loc1-heading">
@@ -110,6 +115,46 @@
             <span class="time">8:00 AM – 10:00 PM</span>
             <span class="day-range" style="margin-top:6px">Monday</span>
             <span class="time closed-note">Closed</span>
+          </div>
+          <span class="card-link">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </article>
+
+        <!-- Location 4: Kolkata -->
+        <article class="card loc-card" aria-labelledby="loc4-heading">
+          <svg class="card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-3.2-4.8-7-8.8-7-12.5a7 7 0 1 1 14 0C19 12.2 15.2 16.2 12 21z"/>
+            <circle cx="12" cy="8.5" r="2.6"/>
+          </svg>
+          <h3 id="loc4-heading">Kaapi Kolkata</h3>
+          <p class="address">Park Street, Camac Street Crossing,<br>Near Allen Park, Park Circus,<br>Kolkata 700017</p>
+          <div class="hours-block">
+            <span class="day-range">Mon – Sun</span>
+            <span class="time">8:00 AM – 11:00 PM</span>
+          </div>
+          <span class="card-link">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </article>
+
+        <!-- Location 5: Delhi -->
+        <article class="card loc-card" aria-labelledby="loc5-heading">
+          <svg class="card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-3.2-4.8-7-8.8-7-12.5a7 7 0 1 1 14 0C19 12.2 15.2 16.2 12 21z"/>
+            <circle cx="12" cy="8.5" r="2.6"/>
+          </svg>
+          <h3 id="loc5-heading">Kaapi Delhi</h3>
+          <p class="address">Khan Market, Shop No. 24,<br>Rabindra Nagar, Lodhi Colony,<br>New Delhi 110003</p>
+          <div class="hours-block">
+            <span class="day-range">Mon – Sun</span>
+            <span class="time">8:00 AM – 11:00 PM</span>
           </div>
           <span class="card-link">
             Get directions
