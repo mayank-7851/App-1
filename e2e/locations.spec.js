@@ -37,12 +37,13 @@ test.describe('Locations page', () => {
 
     // Nav links present
     const navLinks = page.locator('.nav-links a');
-    await expect(navLinks).toHaveCount(5);
+    await expect(navLinks).toHaveCount(6);
     await expect(navLinks.nth(0)).toHaveAttribute('href', 'beans.html');
     await expect(navLinks.nth(1)).toHaveAttribute('href', 'brewing.html');
     await expect(navLinks.nth(2)).toHaveAttribute('href', 'story.html');
-    await expect(navLinks.nth(3)).toHaveAttribute('href', 'locations.html');
-    await expect(navLinks.nth(4)).toHaveAttribute('href', '#contact');
+    await expect(navLinks.nth(3)).toHaveAttribute('href', 'contact.html');
+    await expect(navLinks.nth(4)).toHaveAttribute('href', 'locations.html');
+    await expect(navLinks.nth(5)).toHaveAttribute('href', '#contact');
   });
 
   test('nav logo links to root', async ({ page }) => {
