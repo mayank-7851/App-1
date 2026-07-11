@@ -64,4 +64,14 @@ a{color:var(--coffee);text-decoration:none}
 .card-price{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--gold);margin:0}
 .card-icon{color:var(--gold);flex-shrink:0}
 .card .pill{font-size:11px;padding:3px 10px}
-@media(max-width:820px){.g3{grid-template-columns:1fr}.nav-links{display:none}}
+/* story page — illustration wrappers + list */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.story-illu svg{width:100%;height:auto;display:block}
+.story-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.story-list li{font-size:15px;color:var(--coffee);padding-left:24px;position:relative}
+.story-list li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+@media(max-width:820px){
+    .g3{grid-template-columns:1fr}
+    .g2{grid-template-columns:1fr;gap:32px}
+    .nav-links{flex-wrap:wrap;gap:14px 18px;justify-content:center}
+}
