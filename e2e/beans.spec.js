@@ -42,7 +42,7 @@ test.describe('Beans page', () => {
 
   test('nav links are present and functional', async ({ page }) => {
     const navLinks = page.locator('.nav-links a');
-    await expect(navLinks).toHaveCount(4);
+    await expect(navLinks).toHaveCount(6);
     const beansLink = navLinks.first();
     await expect(beansLink).toHaveAttribute('href', 'beans.html');
   });
