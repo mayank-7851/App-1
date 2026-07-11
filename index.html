@@ -25,10 +25,165 @@
       <h1 style="max-width:12ch;margin:14px auto 0">Coffee, the way it should taste.</h1>
       <p class="muted" style="max-width:52ch;margin:18px auto 26px;font-size:18px">Single-origin beans from the hills of Chikmagalur, roasted fresh and shipped within 48 hours.</p>
       <a class="btn btn-primary" href="#beans">Shop the beans</a>
-      <!-- The rest of this landing page (featured beans, brewing guide, story, footer)
-           is built by Octo tickets. This is the starting scaffold. -->
     </div>
   </section>
 </main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <!-- Newsletter Column -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <div class="newsletter-container" id="newsletterContainer">
+          <div class="newsletter-eyebrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 4-10 8L2 4"/>
+            </svg>
+            Stay in the know
+          </div>
+          <div class="newsletter-title">Fresh drops &amp; brewing stories</div>
+          <p class="newsletter-desc">Get first access to new releases, seasonal picks, and tips from our roasters — delivered every other Sunday.</p>
+
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <input
+              type="email"
+              id="newsletterEmail"
+              class="input-email"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+              aria-label="Email address"
+            >
+            <button type="submit" class="btn btn-primary" id="subscribeBtn">
+              Subscribe
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+          </form>
+
+          <div class="thank-you" id="thankYouMessage">
+            <div class="thank-you-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="thank-you-text">
+              <h4>Welcome to the fold.</h4>
+              <p>Check your inbox — we've sent a little something to get you started. No spam, just good coffee talk.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="beans.html">All Coffees</a></li>
+          <li><a href="#">Subscriptions</a></li>
+          <li><a href="#">Brew Gear</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2 -->
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="brewing.html">Brewing Guides</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Wholesale</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3 -->
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter / X</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        Kaapi<span class="dot"></span>
+      </div>
+      <span>&copy; 2025 Kaapi Coffee Co. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('newsletterForm');
+  var emailInput = document.getElementById('newsletterEmail');
+  var thankYou = document.getElementById('thankYouMessage');
+  var container = document.getElementById('newsletterContainer');
+  var subscribeBtn = document.getElementById('subscribeBtn');
+
+  if (!form || !emailInput || !thankYou || !container || !subscribeBtn) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var emailValue = emailInput.value.trim();
+
+    if (!emailValue || !emailValue.includes('@') || emailValue.length < 5) {
+      emailInput.focus();
+      emailInput.style.borderColor = 'var(--terracotta)';
+      emailInput.style.boxShadow = '0 0 0 4px rgba(181,80,47,0.12)';
+      setTimeout(function(){
+        emailInput.style.borderColor = '';
+        emailInput.style.boxShadow = '';
+      }, 1200);
+      return;
+    }
+
+    form.classList.add('hidden');
+    thankYou.classList.add('visible');
+    container.classList.add('success');
+    subscribeBtn.disabled = true;
+
+    if (typeof console !== 'undefined' && console.log) {
+      console.log('Newsletter signup successful for:', emailValue);
+    }
+  });
+
+  emailInput.addEventListener('input', function(){
+    if (emailInput.style.borderColor === 'var(--terracotta)' ||
+        emailInput.style.borderColor === '#b5502f' ||
+        emailInput.style.borderColor === 'rgb(181, 80, 47)') {
+      emailInput.style.borderColor = '';
+      emailInput.style.boxShadow = '';
+    }
+  });
+
+  // Double-click thank-you to reset (demo convenience)
+  thankYou.addEventListener('click', function(){
+    if (thankYou.dataset.clicked === '1') {
+      form.classList.remove('hidden');
+      thankYou.classList.remove('visible');
+      container.classList.remove('success');
+      emailInput.value = '';
+      subscribeBtn.disabled = false;
+      thankYou.dataset.clicked = '0';
+      emailInput.focus();
+    } else {
+      thankYou.dataset.clicked = '1';
+      setTimeout(function(){ thankYou.dataset.clicked = '0'; }, 800);
+    }
+  });
+})();
+</script>
 
 </body></html>
