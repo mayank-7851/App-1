@@ -85,6 +85,16 @@ a{color:var(--coffee);text-decoration:none}
     .g2{grid-template-columns:1fr;gap:32px}
     .nav-links{display:none}
 }
+/* site footer */
+.site-footer{border-top:1px solid var(--line);padding:40px 0;margin-top:80px;background:var(--paper)}
+.site-footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:14px;color:var(--muted);margin:0}
+.footer-nav{display:flex;gap:24px;align-items:center}
+.footer-nav a{font-size:14px;font-weight:500;color:var(--coffee);text-decoration:none;transition:color .15s}
+.footer-nav a:hover{color:var(--gold)}
+@media(max-width:540px){
+  .site-footer .wrap{flex-direction:column;text-align:center}
+}
 
 /* About section (index.html) */
 .about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
