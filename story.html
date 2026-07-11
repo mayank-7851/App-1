@@ -156,6 +156,82 @@
     </div>
   </section>
 
+    <!-- Testimonials -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="wrap">
+        <div class="eyebrow center">What our customers say</div>
+        <h2 id="testimonials-heading" class="center" style="margin:10px auto 0;max-width:22ch">Loved by coffee drinkers everywhere.</h2>
+        <p class="muted center" style="max-width:42ch;margin:14px auto 36px">Real feedback from real people who start their mornings with Kaapi.</p>
+        <div id="testimonial-list" class="testimonial-grid" role="list"></div>
+        <div id="testimonial-empty" class="testimonial-empty center muted" style="display:none" role="status">
+          We&apos;re collecting reviews &mdash; check back soon.
+        </div>
+      </div>
+    </section>
+    <script>
+    (function(){
+      var testimonials = [
+        { name: "Maya Krishnan", stars: 5, quote: "I\'ve tried coffee from every major roaster in the country, and Kaapi\'s single-origin Arabica is in a league of its own. The jaggery notes are unmistakable \u2014 it actually tastes like the hills it came from. My morning ritual has never been better." },
+        { name: "Jos\u00e9 O\u2019Brien", stars: 5, quote: "As a barista, I\'m picky about beans. Kaapi\'s roast consistency is remarkable \u2014 every bag I\'ve opened has been perfectly developed, never scorched, never under-roasted. The nitrogen-flushed packaging means it\'s still degassing when it arrives. This is how specialty coffee should be done." },
+        { name: "Priya Sharma", stars: 5, quote: "I ordered the Monsoon Medley on a friend\'s recommendation, and I was blown away. It arrived within two days of roasting \u2014 the aroma when I opened the bag was incredible. I\'ve since switched to a monthly subscription. My French press has never been happier." },
+        { name: "Rahul Devan", stars: 4, quote: "What sets Kaapi apart for me is the traceability. I know exactly which estate my beans came from and when they were roasted. That kind of transparency is rare, and it shows in the cup. The only reason I\'m giving 4 stars instead of 5 is that I wish they had more decaf options. But for pure quality? Unmatched.\n\nAlso worth mentioning: their customer service is outstanding. I once emailed about a delayed shipment and got a personal reply from one of the founders within an hour, along with a discount on my next order. That\'s the kind of care you don\'t see from big roasters." }
+      ];
+
+      var list = document.getElementById("testimonial-list");
+      var empty = document.getElementById("testimonial-empty");
+
+      if (!testimonials || !testimonials.length) {
+        list.style.display = "none";
+        empty.style.display = "block";
+        return;
+      }
+
+      testimonials.forEach(function(t){
+        var card = document.createElement("div");
+        card.className = "card testimonial-card";
+        card.setAttribute("role", "listitem");
+
+        // Stars
+        var starsDiv = document.createElement("div");
+        starsDiv.className = "testimonial-stars";
+        starsDiv.setAttribute("aria-label", t.stars + " out of 5 stars");
+        for (var i = 0; i < 5; i++) {
+          var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          svg.setAttribute("width", "18");
+          svg.setAttribute("height", "18");
+          svg.setAttribute("viewBox", "0 0 20 20");
+          svg.setAttribute("fill", i < t.stars ? "currentColor" : "var(--line)");
+          svg.setAttribute("aria-hidden", "true");
+          var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("d", "M10 1.5l2.2 4.45 4.9.72-3.55 3.46.84 4.88L10 12.75 5.6 15l.84-4.88L2.9 6.67l4.9-.72z");
+          svg.appendChild(path);
+          starsDiv.appendChild(svg);
+        }
+        card.appendChild(starsDiv);
+
+        // Quote \u2014 safely handle multi-paragraph with textContent
+        var quote = document.createElement("blockquote");
+        quote.className = "testimonial-quote";
+        var paragraphs = t.quote.split("\n\n");
+        paragraphs.forEach(function(pText, idx){
+          var p = document.createElement("p");
+          p.textContent = pText;
+          p.style.margin = idx === paragraphs.length - 1 ? "0" : "0 0 .8em";
+          quote.appendChild(p);
+        });
+        card.appendChild(quote);
+
+        // Name
+        var nameEl = document.createElement("cite");
+        nameEl.className = "testimonial-name";
+        nameEl.textContent = "\u2014 " + t.name;
+        card.appendChild(nameEl);
+
+        list.appendChild(card);
+      });
+    })();
+    </script>
+
 </main>
 
   <footer class="site-footer">
