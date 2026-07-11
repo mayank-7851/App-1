@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — Kaapi</title>
+<meta name="description" content="Frequently asked questions about Kaapi specialty coffee — shipping, roast dates, subscriptions, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* FAQ accordion — scoped to this page */
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-item:first-child {
+    border-top: 1px solid var(--line);
+  }
+  .faq-item summary {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--espresso);
+    padding: 20px 36px 20px 0;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    outline: none;
+    transition: color 0.15s;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::marker {
+    display: none;
+    content: '';
+  }
+  .faq-item summary::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after {
+    transform: translateY(-25%) rotate(-135deg);
+  }
+  .faq-item summary:hover {
+    color: var(--gold);
+  }
+  .faq-item .faq-answer {
+    padding: 0 0 22px;
+    color: #4a3b2f;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .faq-item .faq-answer a {
+    color: var(--coffee);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .faq-item .faq-answer a:hover {
+    color: var(--gold);
+  }
+</style>
+</head><body>
+
+<header class="nav"><div class="wrap row">
+  <a class="brand" href="/"><span class="dot"></span>Kaapi</a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="beans.html">Beans</a>
+    <a href="brewing.html">Brewing</a>
+    <a href="story.html">Story</a>
+    <a href="faq.html">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+  <!-- Hero -->
+  <section class="section center">
+    <div class="wrap">
+      <div class="eyebrow">You asked, we answer</div>
+      <h1>Frequently asked&nbsp;questions.</h1>
+      <p class="muted" style="max-width:52ch;margin:18px auto 0;font-size:18px">Everything you need to know about our beans, shipping, and subscriptions — in plain English.</p>
+    </div>
+  </section>
+
+  <!-- FAQ accordion -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="faq-list">
+
+        <details class="faq-item" id="shipping">
+          <summary>How soon will my coffee ship after I order?</summary>
+          <div class="faq-answer">
+            <p>We roast every Monday and Thursday. Orders placed before midnight on Sunday ship Monday; orders placed before midnight on Wednesday ship Thursday. Your coffee leaves our roastery within <strong>48 hours</strong> of roasting — never sitting on a shelf. You'll get a tracking number the moment the label is printed.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="roast-dates">
+          <summary>How fresh are the roast dates? Do you roast to order?</summary>
+          <div class="faq-answer">
+            <p>Every bag carries a <strong>roast date</strong> stamp — not a "best by" guess. We roast in small batches to match demand, so the beans that land on your doorstep are typically 2–4 days off roast. That's right in the sweet spot: rested enough to degas, fresh enough to bloom beautifully in your brewer. Most coffee on supermarket shelves is weeks or months old — ours never is.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="subscriptions">
+          <summary>Do you offer subscriptions? Can I pause or cancel?</summary>
+          <div class="faq-answer">
+            <p>Yes — we offer <strong>weekly, fortnightly, and monthly</strong> subscriptions. Pick your favourite bean (or let us surprise you with a rotating single-origin), choose your grind size, and we'll keep it coming. You can pause, skip, or cancel anytime from your account page — no questions asked, no phone calls, no guilt. Try the <a href="beans.html">Beans page</a> to see what's currently in rotation.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="origins">
+          <summary>Where do your beans come from?</summary>
+          <div class="faq-answer">
+            <p>All our coffee is <strong>single-origin from South India</strong> — primarily the hills of Chikmagalur, Coorg, and the Nilgiris. We work directly with smallholder farmers and cooperatives who pick only ripe cherry and process with care. Each lot is traceable to a specific estate or washing station. No blends, no filler, no mystery beans. Read the full story on our <a href="story.html">Story page</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="storage">
+          <summary>What's the best way to store my coffee?</summary>
+          <div class="faq-answer">
+            <p>Keep it simple: an <strong>airtight container</strong> in a cool, dark cupboard — away from heat, light, and moisture. Not the fridge (condensation kills flavour) and not the freezer for daily use (freeze only what you won't touch for 3+ weeks). Our resealable bags have a one-way valve to let CO₂ out without letting oxygen in, so they're perfectly fine for 2–3 weeks after opening. For peak flavour, aim to finish a bag within <strong>three weeks</strong> of the roast date.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+</body></html>
