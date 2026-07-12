@@ -9,3 +9,6 @@ build/
 .venv/
 node_modules/
 test-results/
+
+# generated code graph (rebuilt on demand)
+graphify-out/

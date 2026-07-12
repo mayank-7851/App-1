@@ -3,7 +3,8 @@
 Static marketing site for **Kaapi**, a fictional specialty-coffee roaster. Plain **HTML + CSS, no build
 step**, deployed on **GitHub Pages** from `main` (served under `/App-1/`). This file is the lean map read
 into every agent's context — deeper detail lives in `ARCHITECTURE.md` and `.octo/DESIGN_SYSTEM.md`, pull them
-on demand.
+on demand. Code graph available — run `graphify query "..."` (also `path`, `explain`) for architecture
+questions instead of reading many files.
 
 ## Commands (use these EXACTLY)
 - **Test (the gate): `npx playwright test`** — the e2e suite is self-contained (its `webServer` serves the
@@ -14,7 +15,7 @@ on demand.
 
 ## Where things live
 - `index.html` — landing page. `beans.html` · `brewing.html` · `story.html` · `contact.html` ·
-  `locations.html` — one self-contained page each (no templating/includes).
+  `locations.html` · `faq.html` — one self-contained page each (no templating/includes).
 - `styles.css` — the design system: CSS tokens + reusable classes (`.nav-links`, `.btn`, `.card`,
   `.section`, `.grid`, `.loc-card`, `.footer-nav`). Add new component styles here, in the same style.
 - `.octo/DESIGN_SYSTEM.md` — the durable design reference (warm editorial palette cream/espresso/gold,

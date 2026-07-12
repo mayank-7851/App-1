@@ -12,6 +12,7 @@ bundler — the files in the repo root *are* the deployed site. Optimise for sim
   - `story.html` — brand story + testimonials
   - `contact.html` — contact page
   - `locations.html` — cafe locations grid
+- `faq.html` — frequently asked questions
 - **`styles.css`** — the single source of visual truth: design tokens (colour/type/spacing) + reusable
   component classes (`.nav-links`, `.footer-nav`, `.btn`, `.card`, `.section`, `.grid`, `.loc-card`).
 - **`.octo/DESIGN_SYSTEM.md`** — the durable design language (palette, fonts, component rules). The prose
