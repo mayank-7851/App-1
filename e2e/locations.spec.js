@@ -6,14 +6,14 @@ test.describe('Locations page', () => {
     await page.goto('http://localhost:8080/locations.html', { waitUntil: 'networkidle' });
   });
 
-  test('renders 5 location cards with complete data', async ({ page }) => {
+  test('renders 6 location cards with complete data', async ({ page }) => {
     await expect(page.locator('h1')).toContainText('Our Locations');
 
     const cards = page.locator('.loc-card');
-    await expect(cards).toHaveCount(5);
+    await expect(cards).toHaveCount(6);
 
     // Each card has a name (h3), address, hours block, and directions link
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       const card = cards.nth(i);
       await expect(card.locator('h3')).not.toBeEmpty();
       await expect(card.locator('.address')).not.toBeEmpty();
@@ -29,6 +29,7 @@ test.describe('Locations page', () => {
     await expect(headings.nth(2)).toContainText('Kaapi Roastery');
     await expect(headings.nth(3)).toContainText('Kaapi Kolkata');
     await expect(headings.nth(4)).toContainText('Kaapi Delhi');
+    await expect(headings.nth(5)).toContainText('Kaapi Indore');
   });
 
   test('Kolkata card displays correct city name and address', async ({ page }) => {
@@ -43,6 +44,13 @@ test.describe('Locations page', () => {
     await expect(delhiCard.locator('h3')).toContainText('Delhi');
     await expect(delhiCard.locator('.address')).toContainText('New Delhi 110003');
     await expect(delhiCard.locator('.address')).toContainText('Khan Market');
+  });
+
+  test('Indore card displays correct city name and address', async ({ page }) => {
+    const indoreCard = page.locator('.loc-card').nth(5);
+    await expect(indoreCard.locator('h3')).toContainText('Indore');
+    await expect(indoreCard.locator('.address')).toContainText('Indore 452010');
+    await expect(indoreCard.locator('.address')).toContainText('Vijay Nagar');
   });
 
   test('existing location cards remain unchanged', async ({ page }) => {
@@ -105,8 +113,8 @@ test.describe('Locations page', () => {
   test('responsive: all cards visible on mobile viewport', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 900 });
     const cards = page.locator('.loc-card');
-    await expect(cards).toHaveCount(5);
-    for (let i = 0; i < 5; i++) {
+    await expect(cards).toHaveCount(6);
+    for (let i = 0; i < 6; i++) {
       await expect(cards.nth(i)).toBeVisible();
     }
   });
@@ -136,6 +144,6 @@ test.describe('Locations page', () => {
   test('heading hierarchy is logical', async ({ page }) => {
     await expect(page.locator('h1')).toHaveCount(1);
     const cardHeadings = page.locator('.loc-card h3');
-    await expect(cardHeadings).toHaveCount(5);
+    await expect(cardHeadings).toHaveCount(6);
   });
 });
