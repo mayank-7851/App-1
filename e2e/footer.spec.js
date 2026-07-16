@@ -6,6 +6,9 @@ const PAGES = [
   { name: 'Beans', url: '/beans.html', file: 'beans.html' },
   { name: 'Brewing', url: '/brewing.html', file: 'brewing.html' },
   { name: 'Story', url: '/story.html', file: 'story.html' },
+  { name: 'Contact', url: '/contact.html', file: 'contact.html' },
+  { name: 'Locations', url: '/locations.html', file: 'locations.html' },
+  { name: 'FAQ', url: '/faq.html', file: 'faq.html' },
 ];
 
 test.describe('Site footer', () => {
@@ -113,5 +116,73 @@ test.describe('Site footer', () => {
     );
     // On desktop (>540px) it should be row
     expect(flexDirection).toBe('row');
+  });
+});
+
+test.describe('Newsletter signup in footer', () => {
+
+  for (const pageInfo of PAGES) {
+    test(`newsletter form exists on ${pageInfo.name} page`, async ({ page }) => {
+      await page.goto(pageInfo.url, { waitUntil: 'networkidle' });
+
+      const newsletter = page.locator('.footer-newsletter');
+      await expect(newsletter).toBeVisible();
+
+      // Label
+      const label = newsletter.locator('.footer-newsletter-label');
+      await expect(label).toContainText('Stay in the know');
+
+      // Email input
+      const emailInput = newsletter.locator('#newsletter-email');
+      await expect(emailInput).toBeVisible();
+      await expect(emailInput).toHaveAttribute('type', 'email');
+      await expect(emailInput).toHaveAttribute('name', 'email');
+      await expect(emailInput).toHaveAttribute('required', '');
+      await expect(emailInput).toHaveAttribute('placeholder', 'your@email.com');
+      await expect(emailInput).toHaveAttribute('autocomplete', 'email');
+
+      // Subscribe button
+      const submitBtn = newsletter.locator('button[type="submit"]');
+      await expect(submitBtn).toBeVisible();
+      await expect(submitBtn).toContainText('Subscribe');
+    });
+  }
+
+  test('newsletter form has correct aria-label', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    const form = page.locator('.footer-newsletter-form');
+    await expect(form).toHaveAttribute('aria-label', 'Newsletter signup');
+  });
+
+  test('email input accepts typing', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    const emailInput = page.locator('#newsletter-email');
+    await emailInput.fill('coffee@kaapi.coffee');
+    await expect(emailInput).toHaveValue('coffee@kaapi.coffee');
+  });
+
+  test('newsletter is above copyright in the footer', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    const newsletterBox = await page.locator('.footer-newsletter').boundingBox();
+    const copyBox = await page.locator('.footer-copy').boundingBox();
+
+    // Newsletter should be positioned above the copyright
+    expect(newsletterBox.y).toBeLessThan(copyBox.y);
+  });
+
+  test('newsletter responsive: stacks on mobile', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.waitForTimeout(200);
+
+    const newsletter = page.locator('.footer-newsletter');
+    const flexDirection = await newsletter.evaluate(el =>
+      getComputedStyle(el).flexDirection
+    );
+    // On mobile (<=540px) newsletter should stack vertically
+    expect(flexDirection).toBe('column');
   });
 });
