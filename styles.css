@@ -108,8 +108,16 @@ a{color:var(--coffee);text-decoration:none}
 .footer-nav{display:flex;gap:24px;align-items:center}
 .footer-nav a{font-size:14px;font-weight:500;color:var(--coffee);text-decoration:none;transition:color .15s}
 .footer-nav a:hover{color:var(--gold)}
+/* newsletter in footer */
+.footer-newsletter{width:100%;display:flex;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:4px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.footer-newsletter-label{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--espresso);white-space:nowrap;letter-spacing:-.01em}
+.footer-newsletter-form{display:flex;gap:8px;flex:1;min-width:260px}
+.footer-newsletter-form .input{flex:1;min-width:180px}
+.footer-newsletter-form .btn{white-space:nowrap}
 @media(max-width:540px){
   .site-footer .wrap{flex-direction:column;text-align:center}
+  .footer-newsletter{flex-direction:column;align-items:stretch;text-align:center;gap:12px;padding-bottom:16px}
+  .footer-newsletter-form{flex-direction:column}
 }
 
 /* About section (index.html) */

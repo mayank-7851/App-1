@@ -64,7 +64,7 @@ test.describe('Home page', () => {
     await expect(eyebrow).toBeVisible();
     await expect(eyebrow).toContainText('Roasted in small batches');
 
-    const cta = page.locator('.btn-primary');
+    const cta = page.locator('main .btn-primary').first();
     await expect(cta).toBeVisible();
     await expect(cta).toHaveAttribute('href', '#beans');
   });
